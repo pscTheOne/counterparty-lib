@@ -1,5 +1,7 @@
 """Variables prefixed with `DEFAULT` should be able to be overridden by
 configuration file and command‐line arguments."""
+"""Variables prefixed with `DEFAULT` should be able to be overridden by
+configuration file and command‐line arguments."""
 
 UNIT = 100000000        # The same across assets.
 
@@ -30,41 +32,42 @@ OP_RETURN_MAX_SIZE = 80  # bytes
 
 
 # Currency agnosticism
-BTC = 'BTC'
-XCP = 'XCP'
+BTC = 'LTC'
+XCP = 'XLP'
 
-BTC_NAME = 'Bitcoin'
-XCP_NAME = 'Counterparty'
+BTC_NAME = 'Litecoin'
+XCP_NAME = 'Liteparty'
 APP_NAME = XCP_NAME.lower()
 
 DEFAULT_RPC_PORT_TESTNET = 14000
 DEFAULT_RPC_PORT = 4000
 
-DEFAULT_BACKEND_PORT_TESTNET = 18332
-DEFAULT_BACKEND_PORT = 8332
-DEFAULT_BACKEND_PORT_TESTNET_BTCD = 18334
-DEFAULT_BACKEND_PORT_BTCD = 8334
+DEFAULT_BACKEND_PORT_TESTNET = 19332
+DEFAULT_BACKEND_PORT = 9332
+DEFAULT_BACKEND_PORT_TESTNET_BTCD = 19335
+DEFAULT_BACKEND_PORT_BTCD = 9335
 
-UNSPENDABLE_TESTNET = 'mvCounterpartyXXXXXXXXXXXXXXW24Hef'
-UNSPENDABLE_MAINNET = '1CounterpartyXXXXXXXXXXXXXXXUWLpVr'
+UNSPENDABLE_TESTNET = 'myLitepartyXXXXXXXXXXXXXXXXXVHTF2S'
+UNSPENDABLE_MAINNET = 'LitepartyXXXXXXXXXXXXXXXXXXXYbYgpf'
 
 ADDRESSVERSION_TESTNET = b'\x6f'
 P2SH_ADDRESSVERSION_TESTNET = b'\xc4'
 PRIVATEKEY_VERSION_TESTNET = b'\xef'
-ADDRESSVERSION_MAINNET = b'\x00'
+ADDRESSVERSION_MAINNET = b'\x30'
 P2SH_ADDRESSVERSION_MAINNET = b'\x05'
-PRIVATEKEY_VERSION_MAINNET = b'\x80'
-MAGIC_BYTES_TESTNET = b'\xfa\xbf\xb5\xda'   # For bip-0010
-MAGIC_BYTES_MAINNET = b'\xf9\xbe\xb4\xd9'   # For bip-0010
+PRIVATEKEY_VERSION_MAINNET = b'\xb0'
+MAGIC_BYTES_TESTNET = b'\xfd\xd2\xc8\xf1'
+#MAGIC_BYTES_TESTNET = b'\xfa\xbf\xb5\xda'   # For bip-0010
+MAGIC_BYTES_MAINNET = b'\xfb\xc0\xb6\xdb'   # For bip-0010
 
 BLOCK_FIRST_TESTNET_TESTCOIN = 310000
 BURN_START_TESTNET_TESTCOIN = 310000
 BURN_END_TESTNET_TESTCOIN = 4017708     # Fifty years, at ten minutes per block.
 
-BLOCK_FIRST_TESTNET = 310000
-BLOCK_FIRST_TESTNET_HASH = '000000001f605ec6ee8d2c0d21bf3d3ded0a31ca837acc98893876213828989d'
-BURN_START_TESTNET = 310000
-BURN_END_TESTNET = 4017708              # Fifty years, at ten minutes per block.
+BLOCK_FIRST_TESTNET = 77083
+BLOCK_FIRST_TESTNET_HASH = '48e06bcc759a8a75417d404c3c85526a7ca53dadc6af23919147d0b36e36386c'
+BURN_START_TESTNET = 77083
+BURN_END_TESTNET = 99199
 
 BLOCK_FIRST_MAINNET_TESTCOIN = 278270
 BURN_START_MAINNET_TESTCOIN = 278310
@@ -83,8 +86,8 @@ BURN_END_MAINNET = 283810
 DEFAULT_REGULAR_DUST_SIZE = 5430         # TODO: This is just a guess. I got it down to 5530 satoshis.
 DEFAULT_MULTISIG_DUST_SIZE = 7800        # <https://bitcointalk.org/index.php?topic=528023.msg7469941#msg7469941>
 DEFAULT_OP_RETURN_VALUE = 0
-DEFAULT_FEE_PER_KB = 25000               # sane/low default, also used as minimum when estimated fee is used
-ESTIMATE_FEE_PER_KB = True               # when True will use `estimatefee` from bitcoind instead of DEFAULT_FEE_PER_KB
+DEFAULT_FEE_PER_KB = 250000               # sane/low default, also used as minimum when estimated fee is used
+ESTIMATE_FEE_PER_KB = 0               # when True will use `estimatefee` from bitcoind instead of DEFAULT_FEE_PER_KB
 ESTIMATE_FEE_NBLOCKS = 3
 
 # UI defaults
@@ -110,3 +113,4 @@ DEFAULT_UTXO_LOCKS_MAX_ADDRESSES = 1000
 DEFAULT_UTXO_LOCKS_MAX_AGE = 3.0 #in seconds
 
 # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
